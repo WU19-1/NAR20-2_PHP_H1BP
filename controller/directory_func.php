@@ -58,7 +58,9 @@
                     continue;
                 }
 
-                array_push($filetypes,$splitted[count($splitted) - 1]);
+                if(!in_array($splitted[count($splitted) - 1], $filetypes)){
+                    array_push($filetypes,$splitted[count($splitted) - 1]);
+                }
                 
                 if(strpos(strtolower($entry),strtolower($search)) !== false){
                     array_push($arr,$entry);
@@ -84,7 +86,10 @@
                     continue;
                 }
 
-                array_push($filetypes,$splitted[count($splitted) - 1]);
+                if(!in_array($splitted[count($splitted) - 1], $filetypes)){
+                    array_push($filetypes,$splitted[count($splitted) - 1]);
+                }
+                // array_push($filetypes,$splitted[count($splitted) - 1]);
                 
                 if(strcmp(strtolower($splitted[count($splitted) - 1]),strtolower($filter)) == 0 && strpos(strtolower($entry),strtolower($search)) !== false){
                     array_push($arr,$entry);
