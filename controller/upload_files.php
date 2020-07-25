@@ -13,7 +13,7 @@
         }
 
         for($i = 0 ; $i < count($_FILES['files']['name']) ; $i++){
-            $filename = ($_FILES['files']['name'][$i]);
+            $filename = basename($_FILES['files']['name'][$i]);
             // echo $path . $filename . '<br>';
             move_uploaded_file($_FILES['files']['tmp_name'][$i],$path . $filename);
         }
