@@ -17,10 +17,11 @@
             // echo $path . $filename . '<br>';
             move_uploaded_file($_FILES['files']['tmp_name'][$i],$path . $filename);
         }
-        header("Location:/index.php");
     }
     else{
         header("Location : " . $_SERVER['HTTP_REFERER']);
+        die();
     }
-    
+    header("Location:/index.php");
+    die();
 ?>
