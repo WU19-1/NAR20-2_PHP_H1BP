@@ -9,7 +9,9 @@
             if(strcmp($entry,".") != 0 && strcmp($entry,"..") != 0){
                 $splitted = explode('.',$entry);
                 if(strcmp(mime_content_type(($path . $entry)),"directory") != 0){
-                    array_push($filetypes,$splitted[count($splitted) - 1]);
+                    if(!in_array($splitted[count($splitted) - 1], $filetypes)){
+                        array_push($filetypes,$splitted[count($splitted) - 1]);
+                    }
                 }
                 // array_push($filetypes,$splitted[count($splitted) - 1]);   
             }
