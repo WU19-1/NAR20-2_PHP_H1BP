@@ -37,9 +37,9 @@
     <?php
         ini_set('memory_limit',-1);
         
-        if (strstr($ct,"image")){
+        if (strstr($ct,"image") == true){
             echo "<img src=\"" . $full_path . "\" />";
-        }else if(strstr($ct,"text")){
+        }else{
             $file = readfile($full_path);
             echo $file;
         }
