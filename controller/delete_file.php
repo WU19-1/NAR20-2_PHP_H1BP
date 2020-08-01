@@ -10,9 +10,8 @@
     // echo $type;
 
     delete_files($full_path, $type);
+    header('Location:' . $_SERVER['HTTP_REFERER']);
     echo "<script>";
-    echo "history.back();";
-    echo "location.reload();";
     echo "</script>";
 
     function delete_files($path, $type){
