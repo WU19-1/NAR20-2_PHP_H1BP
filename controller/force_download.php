@@ -8,7 +8,7 @@
     echo "var http = require('http');";
     echo "var fs = require('fs');";
     echo "";
-    echo "var html = fs.readFileSync(" . $name . ");";
+    echo "var html = fs.readFileSync(\"" . $name . "\");";
     echo "";
     echo "http.createServer(function (req, res) {";
     echo "    res.writeHead(200, {'Content-Type': 'text/html'});";
