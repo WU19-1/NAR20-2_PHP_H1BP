@@ -17,4 +17,5 @@
     echo "history.back();";
     echo "location.reload();";
     echo "</script>";
+    header('Location : ' . $_SERVER['HTTP_REFERER']);
 ?>
