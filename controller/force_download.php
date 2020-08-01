@@ -3,7 +3,6 @@
     $file = "../" . $_POST['path'];
     $name = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https:\/\/" : "http://") . $_SERVER['HTTP_HOST']."/controller/downloader.php?path=".$file;
     // echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/controller/download.php?path=" . $file;
-    echo "<script src=\"../script/require.js\"></script>";
     echo "<script>";
     // echo "window.open(\"".(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://") . $_SERVER['HTTP_HOST']."/controller/downloader.php?path=".$file."\");";
     echo "var http = require('http');";
