@@ -18,11 +18,11 @@
         $path = "./files/";
     }
     else if(strcmp(basename($path),"") == 0){
-        echo "masuk";
+        // echo "masuk";
         $path = "./files/";
     }
     else if(strpos(realpath($path),$realpath) === false){
-        echo "masukv";
+        // echo "masukv";
         $path = "./files/";
     }
 
