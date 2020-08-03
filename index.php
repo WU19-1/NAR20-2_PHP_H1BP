@@ -3,7 +3,7 @@
     $path = '';
     if(!isset($_GET['path']) || strcmp($_GET['path'],"./files/") == 0 || 
         strcmp($_GET['path'],"") == 0){
-        $path = "/files/";
+        $path = "/files";
     }else{
         $path = $_GET['path'] . "/";
     }
