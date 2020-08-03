@@ -26,7 +26,6 @@
         $path = "./files/";
     }
 
-
     if((isset($_GET['filter']) && strcmp($_GET['filter'],"") != 0) && (isset($_GET['search']) && strcmp($_GET['search'],"") != 0) ){
         // echo '1';
         $arr = get_directory_with_filter_and_search($path,$_GET['filter'],$_GET['search']);
