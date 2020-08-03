@@ -172,12 +172,13 @@
                         echo "                        <button class=\"btn btn-outline-secondary\" style=\"padding : 0;\"><i class=\"fa fa-folder-open\"></i></button>";
                         echo "                    </form>";
                         echo "                </th>";
+                        $mypath = '../' . $full_path;
+                        $name = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https:\/\/" : "http://") . $_SERVER['HTTP_HOST']."/controller/downloader.php?path=".$mypath;
+                        echo "                <th style=\"padding: 0.2em\">";
+                        echo "                    <a class=\"btn btn-outline-success download\" href=\"$name\" target=\"_blank\" style=\"padding : 0;\"><i class=\"fa fa-download\"></i></a>";
+                        echo "                </th>";
                     }
-                    $mypath = '../' . $full_path;
-                    $name = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https:\/\/" : "http://") . $_SERVER['HTTP_HOST']."/controller/downloader.php?path=".$mypath;
-                    echo "                <th style=\"padding: 0.2em\">";
-                    echo "                    <a class=\"btn btn-outline-success download\" href=\"$name\" target=\"_blank\" style=\"padding : 0;\"><i class=\"fa fa-download\"></i></a>";
-                    echo "                </th>";
+                    
                     echo "            </thead>";
                     echo "        </table>";
                     echo "    </td>";
