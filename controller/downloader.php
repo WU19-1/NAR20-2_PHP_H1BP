@@ -1,6 +1,8 @@
 <?php
     session_write_close();
     set_time_limit(0);
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     $file = $_GET['path'];
     header("Content-Description: File Transfer"); 
     header("Content-Type: application/force-download"); 
