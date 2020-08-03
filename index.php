@@ -3,27 +3,23 @@
     $path = '';
     if(!isset($_GET['path']) || strcmp($_GET['path'],"./files/") == 0 || 
         strcmp($_GET['path'],"") == 0){
-        $path = "/files";
+        $path = "./files/";
     }else{
         $path = $_GET['path'] . "/";
     }
 
     //directory traversal
-    $base = $_SERVER['DOCUMENT_ROOT'];
-    echo "Base path : $base <br>";
-    $realpath = realpath($base);
-    echo "Real base path : $realpath <br>";
-
-    $user_path = $base . $path;
-    echo "User path : $user_path <br>";
-    $realuserpath = realpath($user_path);
-
-    echo "Real user path : $realuserpath";
-
-    if($realuserpath === false || strpos($realuserpath,$base) !== 0){
-        echo '<br>Masuk';
-        $path = './files/';
+    // echo $_SERVER['DOCUMENT_ROOT'] . "/files<br>";
+    // echo $_SERVER['DOCUMENT_ROOT'] . $path . "<br>";
+    // $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
+    // echo "$realpath<br>";
+    if(strstr($path,"../") !== false){
+        $path = "./files/";
     }
+    else if(strcmp(basename($path),"") == 0){
+        $path = "./files/";
+    }
+
 
     if((isset($_GET['filter']) && strcmp($_GET['filter'],"") != 0) && (isset($_GET['search']) && strcmp($_GET['search'],"") != 0) ){
         // echo '1';
