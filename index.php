@@ -9,11 +9,11 @@
     }
 
     //directory traversal
-    echo $_SERVER['DOCUMENT_ROOT'] . "/files<br>";
+    // echo $_SERVER['DOCUMENT_ROOT'] . "/files<br>";
     // echo $_SERVER['DOCUMENT_ROOT'] . $path . "<br>";
-    $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
-    echo "$realpath<br>";
-    echo realpath($path) . "<br>";
+    // $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
+    // echo "$realpath<br>";
+    // echo realpath($path) . "<br>";
     if(strstr($path,"../") !== false){
         $path = "./files/";
     }
