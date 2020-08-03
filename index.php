@@ -11,7 +11,7 @@
     //directory traversal
     // echo $_SERVER['DOCUMENT_ROOT'] . "/files<br>";
     // echo $_SERVER['DOCUMENT_ROOT'] . $path . "<br>";
-    // $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
+    $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
     // echo "$realpath<br>";
     // echo realpath($path) . "<br>";
     if(strstr($path,"../") !== false){
@@ -137,9 +137,7 @@
                     echo "<tr>";
                     echo "    <td>" . ($index) . "</td>";
                     echo "    <td><i class=\"";
-                    if(strcmp(mime_content_type($path . $arr[$i]),"text/plain") == 0){
-                        echo "fa fa-file-o";
-                    }else if(strstr(mime_content_type($path . $arr[$i]),"image")){
+                    if(strstr(mime_content_type($path . $arr[$i]),"image")){
                         echo "fa fa-file-photo-o";
                     }else if(strcmp(mime_content_type($path . $arr[$i]),"text/html") == 0){
                         echo "fa fa-file-code-o";
@@ -147,6 +145,8 @@
                         echo "fa fa-folder-o";
                     }else if(strcmp(mime_content_type($path . $arr[$i]),"application/zip") == 0){
                         echo "fa fa-file-zip-o";
+                    }else{
+                        echo "fa fa-file-o";
                     }
 
                     if(strcmp($arr[$i],"..") == 0){

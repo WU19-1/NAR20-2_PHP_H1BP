@@ -50,7 +50,10 @@ function read(input){
                         filetype.classList.add("fa")
                         filetype.classList.add("fa-file-photo-o")
                         break
-                    
+                    default:
+                        filetype.classList.add("fa")
+                        filetype.classList.add("fa-file-o")
+                        break
                 }
 
                 filename.appendChild(filetype)
