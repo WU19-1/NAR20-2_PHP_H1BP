@@ -5,7 +5,7 @@
         strcmp($_GET['path'],"") == 0){
         $path = ".\\files\\";
     }else{
-        $path = $_GET['path'] . "\\";
+        $path = $_GET['path'] . "/";
     }
 
     //directory traversal
