@@ -11,7 +11,6 @@
     // echo $type;
 
     delete_files($full_path);
-    header('Location:' . $_SERVER['HTTP_REFERER']);
 
     function delete_files($path){
         $type = mime_content_type($path);
@@ -23,8 +22,10 @@
             if(is_dir($path)){
                 rmdir($path);
             }
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }else {
             unlink($path);
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 
