@@ -21,11 +21,9 @@
             $files = glob($path . './*', GLOB_MARK);
             // var_dump($files);
             // echo '<br>';
-            var_dump($files);
             foreach ( $files as $key ) {
                 delete_files($key, $type);
             }
-            echo $path . '<br>';
             if(is_dir($path)){
                 rmdir($path);
             }
