@@ -18,7 +18,8 @@
                 unlink($key);
             }
             if(is_dir($path)){
-                rmdir($path);
+                $res = rmdir($path);
+                echo $res;
             }
             header('Location:' . $_SERVER['HTTP_REFERER']);
         }else {
