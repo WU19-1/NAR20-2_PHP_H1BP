@@ -6,16 +6,17 @@
     $full_path = $path . $_POST['path'];
     
     // echo $full_path;
-    $type = mime_content_type($full_path);
+    // $type = mime_content_type($full_path);
     
     // echo $type;
 
-    delete_files($full_path, $type);
+    delete_files($full_path);
     header('Location:' . $_SERVER['HTTP_REFERER']);
     echo "<script>";
     echo "</script>";
 
-    function delete_files($path, $type){
+    function delete_files($path){
+        $type = mime_content_type($path);
         if(strcmp($type,"directory") == 0){
             $files = glob($path . '*', GLOB_MARK);
             // var_dump($files);
