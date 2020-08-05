@@ -98,7 +98,8 @@
             <?php
                 
                 $params['filter'] = '';
-                $dropdown_href = "http://" . $_SERVER['HTTP_HOST'] . '?' . http_build_query($params);
+                $dropdown_href = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https:\/\/" : "http://") 
+                    . $_SERVER['HTTP_HOST'] . '?' . http_build_query($params);
                 echo "<a class=\"dropdown-item\" href=\"" . $dropdown_href . "\">Clear filter</a>";
                 echo "<div class=\"dropdown-divider\"></div>";
                 foreach ($filetypes as $key) {
