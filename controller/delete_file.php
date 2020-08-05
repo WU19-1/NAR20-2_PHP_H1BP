@@ -1,6 +1,4 @@
 <?php
-    ini_set('memory_limit', '-1');
-    ini_set('max_execution_time','0');
     $path = str_replace("\\","/",$_SERVER['DOCUMENT_ROOT']);
     $_POST['path'] = preg_replace("/\./","",$_POST['path'],1);
     $full_path = $path . $_POST['path'];
@@ -21,13 +19,11 @@
             }
             if(is_dir($path)){
                 rmdir($path);
-                echo "masuk";
             }
-            echo "done";
-            // header('Location:' . $_SERVER['HTTP_REFERER']);
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }else {
             unlink($path);
-            // header('Location:' . $_SERVER['HTTP_REFERER']);
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 
