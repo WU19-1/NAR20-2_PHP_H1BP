@@ -8,23 +8,17 @@
         $path = $_GET['path'] . "/";
     }
 
-    //directory traversal
-    // echo $_SERVER['DOCUMENT_ROOT'] . "/files<br>";
-    // echo $_SERVER['DOCUMENT_ROOT'] . $path . "<br>";
-    $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
-    // echo "$realpath<br>";
-    // echo realpath($path) . "<br>";
-    if(strstr($path,"../") !== false){
-        $path = "./files/";
-    }
-    else if(strcmp(basename($path),"") == 0){
-        // echo "masuk";
-        $path = "./files/";
-    }
-    else if(strpos(realpath($path),$realpath) === false){
-        // echo "masukv";
-        $path = "./files/";
-    }
+    // directory traversal
+    // $realpath = realpath($_SERVER['DOCUMENT_ROOT']. "/" . $path);
+    // if(strstr($path,"../") !== false){
+    //     $path = "./files/";
+    // }
+    // else if(strcmp(basename($path),"") == 0){
+    //     $path = "./files/";
+    // }
+    // else if(strpos(realpath($path),$realpath) === false){
+    //     $path = "./files/";
+    // }
 
     if((isset($_GET['filter']) && strcmp($_GET['filter'],"") != 0) && (isset($_GET['search']) && strcmp($_GET['search'],"") != 0) ){
         // echo '1';

@@ -1,5 +1,5 @@
 <?php
-
+    ini_set('memory_limit', '-1');
     $path = str_replace("\\","/",$_SERVER['DOCUMENT_ROOT']);
     $_POST['path'] = preg_replace("/\./","",$_POST['path'],1);
     $full_path = $path . $_POST['path'];
