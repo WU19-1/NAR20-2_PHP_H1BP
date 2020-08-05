@@ -5,7 +5,7 @@
     $_POST['path'] = preg_replace("/\./","",$_POST['path'],1);
     $full_path = $path . $_POST['path'];
     
-    // echo $full_path;
+    // echo "$full_path<br>";
     // $type = mime_content_type($full_path);
     
     // echo $type;
@@ -18,9 +18,10 @@
     function delete_files($path){
         $type = mime_content_type($path);
         if(strcmp($type,"directory") == 0){
-            $files = glob($path . '*', GLOB_MARK);
+            $files = glob($path . './*', GLOB_MARK);
             // var_dump($files);
             // echo '<br>';
+            var_dump($files);
             foreach ( $files as $key ) {
                 delete_files($key, $type);
             }
@@ -29,7 +30,7 @@
                 rmdir($path);
             }
         }else {
-            echo 'masuk<br>';
+            // echo 'masuk<br>';
             unlink($path);
         }
     }
