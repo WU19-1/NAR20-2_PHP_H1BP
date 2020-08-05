@@ -18,7 +18,7 @@
     function delete_files($path, $type){
         if(strcmp($type,"directory") == 0){
             $files = glob($path . '*', GLOB_MARK);
-            var_dump($files);
+            // var_dump($files);
             // echo '<br>';
             foreach ( $files as $key ) {
                 delete_files($key, $type);
@@ -28,6 +28,7 @@
                 rmdir($path);
             }
         }else {
+            echo 'masuk<br>';
             unlink($path);
         }
     }
