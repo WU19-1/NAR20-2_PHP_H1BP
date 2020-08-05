@@ -9,22 +9,18 @@
     // echo $type;
 
     delete_files($full_path);
+    header('Location:' . $_SERVER['HTTP_REFERER']);
 
     function delete_files($path){
         $type = mime_content_type($path);
         if(strcmp($type,"directory") == 0){
-            $files = glob($path . './*', GLOB_MARK);
+            $files = glob($path . '*', GLOB_MARK);
             foreach ( $files as $key ) {
-                unlink($key);
+                delete_files( $key );
             }
-            if(is_dir($path)){
-                $res = rmdir($path);
-                echo $res;
-            }
-            // header('Location:' . $_SERVER['HTTP_REFERER']);
+            rmdir($path);
         }else {
             unlink($path);
-            // header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 
