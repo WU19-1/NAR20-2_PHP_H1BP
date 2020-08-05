@@ -1,4 +1,5 @@
 <?php
+    ini_set("post_max_size","20M");
     if(isset($_FILES['files'])){
         $path = "";
         // var_dump($_FILES['files']);
