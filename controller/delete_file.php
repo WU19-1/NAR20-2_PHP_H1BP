@@ -21,10 +21,10 @@
                 $res = rmdir($path);
                 echo $res;
             }
-            header('Location:' . $_SERVER['HTTP_REFERER']);
+            // header('Location:' . $_SERVER['HTTP_REFERER']);
         }else {
             unlink($path);
-            header('Location:' . $_SERVER['HTTP_REFERER']);
+            // header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 
