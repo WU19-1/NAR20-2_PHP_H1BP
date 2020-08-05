@@ -21,11 +21,13 @@
             }
             if(is_dir($path)){
                 rmdir($path);
+                echo "masuk";
             }
-            header('Location:' . $_SERVER['HTTP_REFERER']);
+            echo "done";
+            // header('Location:' . $_SERVER['HTTP_REFERER']);
         }else {
             unlink($path);
-            header('Location:' . $_SERVER['HTTP_REFERER']);
+            // header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 
